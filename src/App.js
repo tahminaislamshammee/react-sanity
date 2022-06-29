@@ -1,24 +1,31 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './Components/Home';
+import About from './Components/About';
+import Post from './Components/Post';
+import SinglePost from './Components/SinglePost';
+import Project from './Components/Project';
+import NavBar from './Components/NavBar';
+import { ValueContextProvider } from './Context/ValueContext';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ValueContextProvider>
+      <BrowserRouter>
+        <NavBar/>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/about' element={<About/>}/>
+        <Route path='/post' element={<Post/>}>
+          <Route path=':id' element={<SinglePost/>}/>
+        </Route>
+        <Route path='/project' element={<Project/>}/>
+      </Routes>
+    </BrowserRouter>
+    </ValueContextProvider>
+    
   );
 }
 
