@@ -18,9 +18,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>
-        <Route path='/post' element={<Post/>}>
-          <Route path=':id' element={<SinglePost/>}/>
-        </Route>
+        <Route path='/post' element={<Post/>}/>
+        
+        <Route path='/post/:id' element={<SinglePost/>}/>
         <Route path='/project' element={<Project/>}/>
       </Routes>
     </BrowserRouter>

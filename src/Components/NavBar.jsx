@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import { SocialIcon } from 'react-social-icons';
 import ValueContext from '../Context/ValueContext';
 const NavBar = () => {
 
@@ -26,6 +27,12 @@ const NavBar = () => {
 
                     <NavLink to="/about" className='inflex-flex items-center py-6 px-3 my-6 rounded text-red-200 hover:text-green-800' style={navLinkStyles}>About</NavLink>
                 </nav>
+
+                <div className='inline-flex py-3 px-3 my-6'>
+                    <SocialIcon url='https://www.linkedin.com/' className='mr-4' target="_blank" fgColor='#fff' style={{height:35, width: 35}}/>
+                    <SocialIcon url='https://www.youtube.com/' className='mr-4' target="_blank" fgColor='#fff' style={{height:35, width: 35}}/>
+                    <SocialIcon url='https://www.twitter.com/' className='mr-4' target="_blank" fgColor='#fff' style={{height:35, width: 35}}/>
+                </div>
             </div>
         </header>
     );
