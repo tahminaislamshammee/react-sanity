@@ -1,3 +1,4 @@
+import React from 'react';
 import image from '../download.jpg'
 const Home = () => {
     return ( 
